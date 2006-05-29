@@ -1,0 +1,11 @@
+--- Twisted-1.3.0-vanilla/bin/twistd	2003-09-23 05:28:15.000000000 +0200
++++ Twisted-1.3.0/bin/twistd	2005-02-17 23:21:44.879617320 +0100
+@@ -21,6 +21,8 @@
+ # This makes sure that users don't have to set up their environment
+ # specially in order to run these programs from bin/.
+ import sys, os, string
++try: del(sys.path[sys.path.index(os.path.dirname(os.path.abspath(sys.argv[0])))])
++except: pass
+ if string.find(os.path.abspath(sys.argv[0]), os.sep+'Twisted') != -1:
+     sys.path.insert(0, os.path.normpath(os.path.join(os.path.abspath(sys.argv[0]), os.pardir, os.pardir)))
+ if hasattr(os, "getuid") and os.getuid() != 0:
