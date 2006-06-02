@@ -19,6 +19,7 @@ Requires:	python-devel-tools
 %pyrequires_eq	python-modules
 Obsoletes:	python-Twisted-web-resource-script < 2.0.0
 Conflicts:	python-Twisted
+Conflicts:	python-Twisted-ssl
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -52,6 +53,8 @@ Summary(pl):	Modu³ SSL dla Twisted
 Group:		Libraries/Python
 Requires:	%{name} = %{version}-%{release}
 Requires:	python-pyOpenSSL
+Conflicts:	python-Twisted
+Obsoletes:	python-Twisted-ssl
 
 %description ssl
 This package contains SSL transport module for Twisted
