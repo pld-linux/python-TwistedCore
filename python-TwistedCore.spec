@@ -39,6 +39,7 @@ Summary:	Example programs for Twisted
 Summary(pl):	Programy przyk³adowe do Twisted
 Group:		Libraries/Python
 Requires:	%{name} = %{version}-%{release}
+Obsoletes:	python-Twisted-examples
 Obsoletes:	python-Twisted-examples-sandbox < 2.0.0
 
 %description examples
@@ -53,15 +54,14 @@ Summary(pl):	Modu³ SSL dla Twisted
 Group:		Libraries/Python
 Requires:	%{name} = %{version}-%{release}
 Requires:	python-pyOpenSSL
-Conflicts:	python-Twisted
 Obsoletes:	python-Twisted-ssl
+Conflicts:	python-Twisted
 
 %description ssl
 This package contains SSL transport module for Twisted
 
 %description ssl -l pl
 Ten pakiet zawiera modu³ SSL dla Twisted.
-
 
 %prep
 %setup -q -n %{module}-%{version}
