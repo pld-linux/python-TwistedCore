@@ -3,16 +3,16 @@
 Summary:	Event-driven networking framework written in Python
 Summary(pl):	Narzêdzia do zdarzeniowego i rozproszonego programowania w Pythonie
 Name:		python-%{module}
-Version:	2.4.0
-Release:	0.3
+Version:	2.5.0
+Release:	1
 License:	LGPL
 Group:		Libraries/Python
-Source0:	http://tmrc.mit.edu/mirror/twisted/Twisted/2.4/%{module}-%{version}.tar.bz2
-# Source0-md5:	042a57f65fe919a9234047d7ce8c43f1
+Source0:	http://tmrc.mit.edu/mirror/twisted/Twisted/2.5/%{module}-%{version}.tar.bz2
+# Source0-md5:	cf8d8d73c3b58b79c6a16b5fc23d5b61
 Patch0:		%{name}-basedir-import.patch
 URL:		http://www.twistedmatrix.com/
 BuildRequires:	ZopeInterface
-BuildRequires:	python-devel >= 2.2
+BuildRequires:	python-devel >= 2.5
 Requires:	ZopeInterface
 Requires:	python-Crypto
 Requires:	python-devel-tools
@@ -95,15 +95,15 @@ rm -rf $RPM_BUILD_ROOT
 %files
 %defattr(644,root,root,755)
 %doc CREDITS NEWS README
-%doc doc/{index.html,benchmarks,fun,howto,img,specifications,upgrades,vision}
+%doc doc/{index.html,benchmarks,development,fun,howto,img,specifications,upgrades}
 %attr(755,root,root) %{_bindir}/manhole
 %attr(755,root,root) %{_bindir}/mktap
 %attr(755,root,root) %{_bindir}/tap2deb
 %attr(755,root,root) %{_bindir}/tap2rpm
 %attr(755,root,root) %{_bindir}/tapconvert
-%attr(755,root,root) %{_bindir}/tkmktap
 %attr(755,root,root) %{_bindir}/trial
 %attr(755,root,root) %{_bindir}/twistd
+ %{py_sitedir}/*.egg-info
 %dir %{py_sitedir}/twisted
 %{py_sitedir}/twisted/*.py[oc]
 %{py_sitedir}/twisted/application
@@ -126,6 +126,7 @@ rm -rf $RPM_BUILD_ROOT
 %{py_sitedir}/twisted/plugins/twisted_inet.py[oc]
 %{py_sitedir}/twisted/plugins/twisted_manhole.py[oc]
 %{py_sitedir}/twisted/plugins/twisted_portforward.py[oc]
+%{py_sitedir}/twisted/plugins/twisted_reactors.py[oc]
 %{py_sitedir}/twisted/plugins/twisted_socks.py[oc]
 %{py_sitedir}/twisted/plugins/twisted_telnet.py[oc]
 %{py_sitedir}/twisted/plugins/twisted_trial.py[oc]
@@ -137,7 +138,6 @@ rm -rf $RPM_BUILD_ROOT
 %{_mandir}/man1/tap2deb.1*
 %{_mandir}/man1/tap2rpm.1*
 %{_mandir}/man1/tapconvert.1*
-%{_mandir}/man1/tkmktap.1*
 %{_mandir}/man1/trial.1*
 %{_mandir}/man1/twistd.1*
 
