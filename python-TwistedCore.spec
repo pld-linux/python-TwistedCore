@@ -105,7 +105,7 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_bindir}/twistd
  %{py_sitedir}/*.egg-info
 %dir %{py_sitedir}/twisted
-%{py_sitedir}/twisted/*.py[oc]
+%{py_sitedir}/twisted/*.py[co]
 %{py_sitedir}/twisted/application
 %{py_sitedir}/twisted/cred
 %{py_sitedir}/twisted/enterprise
@@ -120,17 +120,17 @@ rm -rf $RPM_BUILD_ROOT
 %{py_sitedir}/twisted/test
 %{py_sitedir}/twisted/trial
 %dir %{py_sitedir}/twisted/plugins
-%{py_sitedir}/twisted/plugins/__*.py[oc]
-%{py_sitedir}/twisted/plugins/*plugin.py[oc]
-%{py_sitedir}/twisted/plugins/twisted_ftp.py[oc]
-%{py_sitedir}/twisted/plugins/twisted_inet.py[oc]
-%{py_sitedir}/twisted/plugins/twisted_manhole.py[oc]
-%{py_sitedir}/twisted/plugins/twisted_portforward.py[oc]
-%{py_sitedir}/twisted/plugins/twisted_reactors.py[oc]
-%{py_sitedir}/twisted/plugins/twisted_socks.py[oc]
-%{py_sitedir}/twisted/plugins/twisted_telnet.py[oc]
-%{py_sitedir}/twisted/plugins/twisted_trial.py[oc]
-%exclude %{py_sitedir}/twisted/internet/ssl.py[oc]
+%{py_sitedir}/twisted/plugins/__*.py[co]
+%{py_sitedir}/twisted/plugins/*plugin.py[co]
+%{py_sitedir}/twisted/plugins/twisted_ftp.py[co]
+%{py_sitedir}/twisted/plugins/twisted_inet.py[co]
+%{py_sitedir}/twisted/plugins/twisted_manhole.py[co]
+%{py_sitedir}/twisted/plugins/twisted_portforward.py[co]
+%{py_sitedir}/twisted/plugins/twisted_reactors.py[co]
+%{py_sitedir}/twisted/plugins/twisted_socks.py[co]
+%{py_sitedir}/twisted/plugins/twisted_telnet.py[co]
+%{py_sitedir}/twisted/plugins/twisted_trial.py[co]
+%exclude %{py_sitedir}/twisted/internet/ssl.py[co]
 %{_mandir}/man1/manhole.1*
 %{_mandir}/man1/mktap.1*
 # this script is not installed
@@ -143,7 +143,7 @@ rm -rf $RPM_BUILD_ROOT
 
 %files ssl
 %defattr(644,root,root,755)
-%{py_sitedir}/twisted/internet/ssl.py[oc]
+%{py_sitedir}/twisted/internet/ssl.py[co]
 
 %files examples
 %defattr(644,root,root,755)
