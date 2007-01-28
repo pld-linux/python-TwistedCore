@@ -12,7 +12,7 @@ Source0:	http://tmrc.mit.edu/mirror/twisted/Twisted/2.5/%{module}-%{version}.tar
 Patch0:		%{name}-basedir-import.patch
 URL:		http://www.twistedmatrix.com/
 BuildRequires:	ZopeInterface
-BuildRequires:	python-devel >= 2.5
+BuildRequires:	python-devel >= 1:2.5
 Requires:	ZopeInterface
 Requires:	python-Crypto
 Requires:	python-devel-tools
