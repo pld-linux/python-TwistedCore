@@ -1,7 +1,7 @@
 %define 	module	TwistedCore
 
 Summary:	Event-driven networking framework written in Python
-Summary(pl):	Narzêdzia do zdarzeniowego i rozproszonego programowania w Pythonie
+Summary(pl.UTF-8):   NarzÄ™dzia do zdarzeniowego i rozproszonego programowania w Pythonie
 Name:		python-%{module}
 Version:	2.5.0
 Release:	1
@@ -28,15 +28,15 @@ under the LGPL. Twisted supports TCP, UDP, SSL/TLS, multicast, Unix
 sockets, a large number of protocols (including HTTP, NNTP, SSH, IRC,
 FTP, and others), and much more.
 
-%description -l pl
-Narzêdzia i biblioteki do budowania rozproszonych aplikacji sieciowych
-napisane w Pythonie i udostêpnione na licencji LGPL. Twisted wspiera
-TCP, UDP, SSL/TLS, multicast, gniazda uniksowe, spor± ilo¶æ protoko³ów
-(w tym HTTP, NNTP, SSH, IRC, FTP i wiele innych), i du¿o wiêcej.
+%description -l pl.UTF-8
+NarzÄ™dzia i biblioteki do budowania rozproszonych aplikacji sieciowych
+napisane w Pythonie i udostÄ™pnione na licencji LGPL. Twisted wspiera
+TCP, UDP, SSL/TLS, multicast, gniazda uniksowe, sporÄ… iloÅ›Ä‡ protokoÅ‚Ã³w
+(w tym HTTP, NNTP, SSH, IRC, FTP i wiele innych), i duÅ¼o wiÄ™cej.
 
 %package examples
 Summary:	Example programs for Twisted
-Summary(pl):	Programy przyk³adowe do Twisted
+Summary(pl.UTF-8):   Programy przykÅ‚adowe do Twisted
 Group:		Libraries/Python
 Requires:	%{name} = %{version}-%{release}
 Obsoletes:	python-Twisted-examples
@@ -45,12 +45,12 @@ Obsoletes:	python-Twisted-examples-sandbox < 2.0.0
 %description examples
 This package contains example programs for Twisted.
 
-%description examples -l pl
-Ten pakiet zawiera przyk³adowe programy dla Twisted.
+%description examples -l pl.UTF-8
+Ten pakiet zawiera przykÅ‚adowe programy dla Twisted.
 
 %package ssl
 Summary:	SSL module for Twisted
-Summary(pl):	Modu³ SSL dla Twisted
+Summary(pl.UTF-8):   ModuÅ‚ SSL dla Twisted
 Group:		Libraries/Python
 Requires:	%{name} = %{version}-%{release}
 Requires:	python-pyOpenSSL
@@ -60,8 +60,8 @@ Conflicts:	python-Twisted
 %description ssl
 This package contains SSL transport module for Twisted
 
-%description ssl -l pl
-Ten pakiet zawiera modu³ SSL dla Twisted.
+%description ssl -l pl.UTF-8
+Ten pakiet zawiera moduÅ‚ SSL dla Twisted.
 
 %prep
 %setup -q -n %{module}-%{version}
