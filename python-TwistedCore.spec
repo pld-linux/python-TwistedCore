@@ -1,7 +1,7 @@
 %define 	module	TwistedCore
 
 Summary:	Event-driven networking framework written in Python
-Summary(pl.UTF-8):   Narzędzia do zdarzeniowego i rozproszonego programowania w Pythonie
+Summary(pl.UTF-8):	Narzędzia do zdarzeniowego i rozproszonego programowania w Pythonie
 Name:		python-%{module}
 Version:	2.5.0
 Release:	1
@@ -36,7 +36,7 @@ TCP, UDP, SSL/TLS, multicast, gniazda uniksowe, sporą ilość protokołów
 
 %package examples
 Summary:	Example programs for Twisted
-Summary(pl.UTF-8):   Programy przykładowe do Twisted
+Summary(pl.UTF-8):	Programy przykładowe do Twisted
 Group:		Libraries/Python
 Requires:	%{name} = %{version}-%{release}
 Obsoletes:	python-Twisted-examples
@@ -50,7 +50,7 @@ Ten pakiet zawiera przykładowe programy dla Twisted.
 
 %package ssl
 Summary:	SSL module for Twisted
-Summary(pl.UTF-8):   Moduł SSL dla Twisted
+Summary(pl.UTF-8):	Moduł SSL dla Twisted
 Group:		Libraries/Python
 Requires:	%{name} = %{version}-%{release}
 Requires:	python-pyOpenSSL
