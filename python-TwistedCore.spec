@@ -17,6 +17,7 @@ Requires:	ZopeInterface
 Requires:	python-Crypto
 Requires:	python-devel-tools
 %pyrequires_eq	python-modules
+Obsoletes:	python-Twisted
 Obsoletes:	python-Twisted-web-resource-script < 2.0.0
 Conflicts:	python-Twisted
 Conflicts:	python-Twisted-ssl
