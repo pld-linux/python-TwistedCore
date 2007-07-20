@@ -12,7 +12,7 @@ Source0:	http://tmrc.mit.edu/mirror/twisted/Twisted/2.5/%{module}-%{version}.tar
 Patch0:		%{name}-basedir-import.patch
 URL:		http://www.twistedmatrix.com/
 BuildRequires:	ZopeInterface
-BuildRequires:	python-devel >= 1:2.5
+BuildRequires:	python-devel >= 1:2.4
 Requires:	ZopeInterface
 Requires:	python-Crypto
 Requires:	python-devel-tools
@@ -103,7 +103,6 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_bindir}/tapconvert
 %attr(755,root,root) %{_bindir}/trial
 %attr(755,root,root) %{_bindir}/twistd
- %{py_sitedir}/*.egg-info
 %dir %{py_sitedir}/twisted
 %{py_sitedir}/twisted/*.py[co]
 %{py_sitedir}/twisted/application
