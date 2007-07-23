@@ -103,7 +103,7 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_bindir}/tapconvert
 %attr(755,root,root) %{_bindir}/trial
 %attr(755,root,root) %{_bindir}/twistd
- %{py_sitedir}/*.egg-info
+%{py_sitedir}/*.egg-info
 %dir %{py_sitedir}/twisted
 %{py_sitedir}/twisted/*.py[co]
 %{py_sitedir}/twisted/application
