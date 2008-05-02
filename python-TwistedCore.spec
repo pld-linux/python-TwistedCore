@@ -3,12 +3,12 @@
 Summary:	Event-driven networking framework written in Python
 Summary(pl.UTF-8):	Narzędzia do zdarzeniowego i rozproszonego programowania w Pythonie
 Name:		python-%{module}
-Version:	2.5.0
+Version:	8.0.1
 Release:	1
 License:	LGPL
 Group:		Libraries/Python
-Source0:	http://tmrc.mit.edu/mirror/twisted/Twisted/2.5/%{module}-%{version}.tar.bz2
-# Source0-md5:	cf8d8d73c3b58b79c6a16b5fc23d5b61
+Source0:	http://tmrc.mit.edu/mirror/twisted/Core/8.0/%{module}-%{version}.tar.bz2
+# Source0-md5:	1c84354d99a291bc89c598140c2d6a1f
 Patch0:		%{name}-basedir-import.patch
 URL:		http://www.twistedmatrix.com/
 BuildRequires:	ZopeInterface
@@ -95,14 +95,17 @@ rm -rf $RPM_BUILD_ROOT
 %files
 %defattr(644,root,root,755)
 %doc CREDITS NEWS README
-%doc doc/{index.html,benchmarks,development,fun,howto,img,specifications,upgrades}
+%doc doc/{index.html,benchmarks,howto,img,specifications,upgrades}
 %attr(755,root,root) %{_bindir}/manhole
 %attr(755,root,root) %{_bindir}/mktap
+%attr(755,root,root) %{_bindir}/pyhtmlizer
+%attr(755,root,root) %{_bindir}/t-im
 %attr(755,root,root) %{_bindir}/tap2deb
 %attr(755,root,root) %{_bindir}/tap2rpm
 %attr(755,root,root) %{_bindir}/tapconvert
 %attr(755,root,root) %{_bindir}/trial
 %attr(755,root,root) %{_bindir}/twistd
+%attr(755,root,root) %{_bindir}/twistd.orig
 %{py_sitedir}/*.egg-info
 %dir %{py_sitedir}/twisted
 %{py_sitedir}/twisted/*.py[co]
@@ -121,7 +124,6 @@ rm -rf $RPM_BUILD_ROOT
 %{py_sitedir}/twisted/trial
 %dir %{py_sitedir}/twisted/plugins
 %{py_sitedir}/twisted/plugins/__*.py[co]
-%{py_sitedir}/twisted/plugins/*plugin.py[co]
 %{py_sitedir}/twisted/plugins/twisted_ftp.py[co]
 %{py_sitedir}/twisted/plugins/twisted_inet.py[co]
 %{py_sitedir}/twisted/plugins/twisted_manhole.py[co]
@@ -130,11 +132,12 @@ rm -rf $RPM_BUILD_ROOT
 %{py_sitedir}/twisted/plugins/twisted_socks.py[co]
 %{py_sitedir}/twisted/plugins/twisted_telnet.py[co]
 %{py_sitedir}/twisted/plugins/twisted_trial.py[co]
+%{py_sitedir}/twisted/plugins/twisted_qtstub.py[co]
+%{py_sitedir}/twisted/plugins/cred_*.py[co]
 %exclude %{py_sitedir}/twisted/internet/ssl.py[co]
 %{_mandir}/man1/manhole.1*
 %{_mandir}/man1/mktap.1*
-# this script is not installed
-#%{_mandir}/man1/pyhtmlizer.1*
+%{_mandir}/man1/pyhtmlizer.1*
 %{_mandir}/man1/tap2deb.1*
 %{_mandir}/man1/tap2rpm.1*
 %{_mandir}/man1/tapconvert.1*
