@@ -3,12 +3,12 @@
 Summary:	Event-driven networking framework written in Python
 Summary(pl.UTF-8):	Narzędzia do zdarzeniowego i rozproszonego programowania w Pythonie
 Name:		python-%{module}
-Version:	8.0.1
-Release:	4
+Version:	8.1.0
+Release:	1
 License:	LGPL
 Group:		Libraries/Python
-Source0:	http://tmrc.mit.edu/mirror/twisted/Core/8.0/%{module}-%{version}.tar.bz2
-# Source0-md5:	1c84354d99a291bc89c598140c2d6a1f
+Source0:	http://tmrc.mit.edu/mirror/twisted/Core/8.1/%{module}-%{version}.tar.bz2
+# Source0-md5:	b6f766c7512d342be1844eeee974031d
 Patch0:		%{name}-basedir-import.patch
 URL:		http://www.twistedmatrix.com/
 BuildRequires:	Zope-Interface
