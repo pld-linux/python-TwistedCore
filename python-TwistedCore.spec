@@ -13,6 +13,7 @@ Patch0:		%{name}-basedir-import.patch
 URL:		http://www.twistedmatrix.com/
 BuildRequires:	Zope-Interface
 BuildRequires:	python-devel >= 1:2.5
+BuildRequires:	rpm-pythonprov
 Requires:	Zope-Interface
 Requires:	python-Crypto
 Requires:	python-devel-tools
