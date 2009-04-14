@@ -14,6 +14,7 @@ URL:		http://www.twistedmatrix.com/
 BuildRequires:	Zope-Interface
 BuildRequires:	python-devel >= 1:2.5
 BuildRequires:	rpm-pythonprov
+BuildRequires:	rpmbuild(macros) >= 1.219
 Requires:	Zope-Interface
 Requires:	python-Crypto
 Requires:	python-devel-tools
@@ -68,26 +69,27 @@ Ten pakiet zawiera moduł SSL dla Twisted.
 %setup -q -n %{module}-%{version}
 %patch0 -p1
 
+# cleanup backups after patching
+find . '(' -name '*~' -o -name '*.orig' ')' -print0 | xargs -0 -r -l512 rm -f
+
 %build
-CFLAGS="%{rpmcflags}"
-export CFLAGS
-python setup.py build_ext
+export CFLAGS="%{rpmcflags}"
+%{__python} setup.py build_ext
 
 %install
 rm -rf $RPM_BUILD_ROOT
 install -d $RPM_BUILD_ROOT{%{py_sitedir},%{_mandir}/man1,%{_examplesdir}/%{name}-%{version}}
-
-python setup.py install \
+%{__python} setup.py install \
 	--install-purelib=%{py_sitedir} \
 	--root=$RPM_BUILD_ROOT \
 	--optimize=2
 
-find $RPM_BUILD_ROOT%{py_sitedir} -name \*.py -exec rm {} \;
+%py_postclean
 
 install doc/man/*.1 $RPM_BUILD_ROOT%{_mandir}/man1
 for dir in *; do
 	[ ! -d "$dir/doc/examples" ] && continue
-	cp -ar "$dir/doc/examples/" "$RPM_BUILD_ROOT%{_examplesdir}/%{name}-%{version}/$dir"
+	cp -a "$dir/doc/examples/" "$RPM_BUILD_ROOT%{_examplesdir}/%{name}-%{version}/$dir"
 done
 
 %clean
@@ -106,7 +108,6 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_bindir}/tapconvert
 %attr(755,root,root) %{_bindir}/trial
 %attr(755,root,root) %{_bindir}/twistd
-%attr(755,root,root) %{_bindir}/twistd.orig
 %{py_sitedir}/*.egg-info
 %dir %{py_sitedir}/twisted
 %{py_sitedir}/twisted/*.py[co]
