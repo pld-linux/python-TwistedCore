@@ -108,7 +108,9 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_bindir}/tapconvert
 %attr(755,root,root) %{_bindir}/trial
 %attr(755,root,root) %{_bindir}/twistd
+%if "%{py_ver}" > "2.4"
 %{py_sitedir}/*.egg-info
+%endif
 %dir %{py_sitedir}/twisted
 %{py_sitedir}/twisted/*.py[co]
 %{py_sitedir}/twisted/application
