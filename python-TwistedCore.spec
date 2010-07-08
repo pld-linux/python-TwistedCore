@@ -4,7 +4,7 @@ Summary:	Event-driven networking framework written in Python
 Summary(pl.UTF-8):	Narzędzia do zdarzeniowego i rozproszonego programowania w Pythonie
 Name:		python-%{module}
 Version:	10.0.0
-Release:	1
+Release:	2
 License:	LGPL
 Group:		Libraries/Python
 Source0:	http://tmrc.mit.edu/mirror/twisted/Core/10.0/%{module}-%{version}.tar.bz2
