@@ -3,13 +3,12 @@
 Summary:	Event-driven networking framework written in Python
 Summary(pl.UTF-8):	Narzędzia do zdarzeniowego i rozproszonego programowania w Pythonie
 Name:		python-%{module}
-Version:	10.0.0
-Release:	3
+Version:	13.0.0
+Release:	1
 License:	LGPL
 Group:		Libraries/Python
-Source0:	http://tmrc.mit.edu/mirror/twisted/Core/10.0/%{module}-%{version}.tar.bz2
-# Source0-md5:	4c78f2ee9d5de3cc5b134d572cf0f074
-Patch0:		%{name}-basedir-import.patch
+Source0:	http://twistedmatrix.com/Releases/Core/13.0/%{module}-%{version}.tar.bz2
+# Source0-md5:	83c2ebed9577a68138eb32b4fdfc65a0
 URL:		http://www.twistedmatrix.com/
 BuildRequires:	Zope-Interface
 BuildRequires:	python-devel >= 1:2.5
@@ -67,7 +66,6 @@ Ten pakiet zawiera moduł SSL dla Twisted.
 
 %prep
 %setup -q -n %{module}-%{version}
-%patch0 -p1
 
 # cleanup backups after patching
 find . '(' -name '*~' -o -name '*.orig' ')' -print0 | xargs -0 -r -l512 rm -f
@@ -98,9 +96,8 @@ rm -rf $RPM_BUILD_ROOT
 %files
 %defattr(644,root,root,755)
 %doc CREDITS NEWS README
-%doc doc/{index.html,benchmarks,howto,img,specifications,upgrades}
+%doc doc/{index.html,benchmarks,howto,img,specifications}
 %attr(755,root,root) %{_bindir}/manhole
-%attr(755,root,root) %{_bindir}/mktap
 %attr(755,root,root) %{_bindir}/pyhtmlizer
 # %attr(755,root,root) %{_bindir}/t-im
 %attr(755,root,root) %{_bindir}/tap2deb
@@ -128,6 +125,7 @@ rm -rf $RPM_BUILD_ROOT
 %{py_sitedir}/twisted/trial
 %dir %{py_sitedir}/twisted/plugins
 %{py_sitedir}/twisted/plugins/__*.py[co]
+%{py_sitedir}/twisted/plugins/twisted_core.py[co]
 %{py_sitedir}/twisted/plugins/twisted_ftp.py[co]
 %{py_sitedir}/twisted/plugins/twisted_inet.py[co]
 %{py_sitedir}/twisted/plugins/twisted_manhole.py[co]
@@ -140,7 +138,6 @@ rm -rf $RPM_BUILD_ROOT
 %{py_sitedir}/twisted/plugins/cred_*.py[co]
 %exclude %{py_sitedir}/twisted/internet/ssl.py[co]
 %{_mandir}/man1/manhole.1*
-%{_mandir}/man1/mktap.1*
 %{_mandir}/man1/pyhtmlizer.1*
 %{_mandir}/man1/tap2deb.1*
 %{_mandir}/man1/tap2rpm.1*
