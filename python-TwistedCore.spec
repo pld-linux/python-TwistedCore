@@ -13,7 +13,7 @@ URL:		http://www.twistedmatrix.com/
 BuildRequires:	Zope-Interface
 BuildRequires:	python-devel >= 1:2.5
 BuildRequires:	rpm-pythonprov
-BuildRequires:	rpmbuild(macros) >= 1.219
+BuildRequires:	rpmbuild(macros) >= 1.710
 Requires:	Zope-Interface
 Requires:	python-Crypto
 Requires:	python-devel-tools
